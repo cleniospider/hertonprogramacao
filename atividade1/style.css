@@ -1,0 +1,114 @@
+/* Reseta as margens padrão do navegador e define a fonte */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Fundo da página todo em azul escuro */
+body {
+    background-color: #461616;
+    color: #F0F4FF ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Faz o cartão ficar centralizado na tela toda */
+}
+
+/* Estilo do container do cartão */
+.card {
+    background-color: #1A1D27; /* Cinza escuro/azulado */
+    width: 470px;
+    height: 740px;
+    margin-top: -100px;
+    padding: 40px 30px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+/* Container e borda da imagem de perfil */
+.profile-img-container {
+    margin-bottom: 15px;
+}
+
+.profile-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%; /* Deixa a imagem redonda */
+    object-fit: cover;
+    border: 3px solid #681c1c; /* Borda azul em volta da foto */
+}
+
+/* Textos principais */
+.name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #681c1c ;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Linha divisória sutil */
+.divider {
+    border: none;
+    border-top: 1px solid #2d3748;
+    margin: 25px 0;
+}
+
+/* Biografia */
+.bio {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+/* Título das habilidades */
+.skills-title {
+    font-size: 0.75rem;
+    color: #681c1c;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Lista de habilidades */
+.skills-list {
+    list-style: none; /* Remove as bolinhas da lista */
+    margin-bottom: 35px;
+}
+
+.skills-list li {
+    font-size: 0.95rem;
+    padding: 12px 0;
+    border-top: 1px solid #2d3748; /* Linhas entre os itens */
+}
+
+.skills-list li:last-child {
+    border-bottom: 1px solid #2d3748; /* Linha no final da lista */
+}
+
+/* Estilo do Botão */
+.contact-btn {
+    background-color: #681c1c; /* Azul claro */
+    color: #141429; /* Texto escuro para dar contraste */
+    font-weight: bold;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 80%; /* Não ocupa a largura toda, igual na imagem */
+    transition: background-color 0.2s ease;
+}
+
+.contact-btn:hover {
+    background-color: #5c1818; /* Fica um pouco mais escuro ao passar o mouse */
+}

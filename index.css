@@ -1,0 +1,11 @@
+.card {
+    background-color: #1A1D27;
+    padding: 24px;
+    border-radius: 12px;
+    text-align: center;
+}
+.avatar {
+    width: 80px;
+    border-radius: 50%;
+}
+.role { color: #7C839E; }
