@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício Prático</title>
+</head>
+<body>
+
+    <h1>Exercício Prático</h1>
+    
+    <div>
+        <h3>Parte 1 — Idade</h3>
+        <label>Idade: </label>
+        <input type="number" id="inputIdade" value="18">
+        <button onclick="testarParte1()">Executar</button>
+        <span>Resultado: <b id="resultadoParte1">-</b></span>
+    </div>
+
+    <br>
+
+    <div>
+        <h3>Parte 2 — Nota</h3>
+        <label>Nota: </label>
+        <input type="number" id="inputNota" value="6.5" step="0.1">
+        <button onclick="testarParte2()">Executar</button>
+        <span>Resultado: <b id="resultadoParte2">-</b></span>
+    </div>
+
+    <br>
+
+    <div>
+        <h3>Parte 3 — Dia</h3>
+        <label>Dia: </label>
+        <input type="number" id="inputDia" value="3">
+        <button onclick="testarParte3()">Executar</button>
+        <span>Resultado: <b id="resultadoParte3">-</b></span>
+    </div>
+
+<script>
+    function testarParte1() {
+        let idade = Number(document.getElementById('inputIdade').value);
+        let resultado;
+        
+        if (idade >= 18) {
+            resultado = "Pode dirigir";
+        } else {
+            resultado = "Não pode dirigir";
+        }
+        
+        document.getElementById('resultadoParte1').innerText = resultado;
+    }
+
+    function testarParte2() {
+        let nota = Number(document.getElementById('inputNota').value);
+        let resultado;
+        
+        if (nota >= 7) {
+            resultado = "Aprovado";
+        } else if (nota >= 5) {
+            resultado = "Recuperação";
+        } else {
+            resultado = "Reprovado";
+        }
+        
+        document.getElementById('resultadoParte2').innerText = resultado;
+    }
+
+    function testarParte3() {
+        let dia = parseInt(document.getElementById('inputDia').value);
+        let resultado;
+        
+        switch (dia) {
+            case 1: resultado = "Domingo"; break;
+            case 2: resultado = "Segunda"; break;
+            case 3: resultado = "Terça"; break;
+            case 4: resultado = "Quarta"; break;
+            case 5: resultado = "Quinta"; break;
+            case 6: resultado = "Sexta"; break;
+            case 7: resultado = "Sábado"; break;
+            default: resultado = "Dia inválido"; break;
+        }
+        
+        document.getElementById('resultadoParte3').innerText = resultado;
+    }
+
+    window.onload = function() {
+        testarParte1();
+        testarParte2();
+        testarParte3();
+    }
+</script>
+
+</body>
+</html>
