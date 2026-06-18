@@ -1,0 +1,27 @@
+<!-- Crie um programa que exiba uma contagem regressiva de 10 até 1 no console. -->
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - While</title>
+</head>
+<body>
+
+    <h1>Exercício 2: Contagem Regressiva de 10 até 1</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let elemento = document.getElementById("resultado");
+        let contador = 10;
+
+        while (contador >= 1) {
+            elemento.innerHTML += contador + "<br>";
+            console.log(contador);
+            contador--;
+        }
+    </script>
+
+</body>
+</html>

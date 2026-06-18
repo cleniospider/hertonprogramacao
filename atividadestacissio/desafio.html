@@ -1,0 +1,44 @@
+<!-- Desafio -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Final</title>
+</head>
+<body>
+
+    <h1>Desafio Combinado</h1>
+    
+    <h2>(1) Números pares de 1 até 20:</h2>
+    <div id="pares"></div>
+
+    <h2>(2 e 3) Soma dos números de 1 até 10:</h2>
+    <div id="soma"></div>
+
+    <script>
+        let divPares = document.getElementById("pares");
+        let divSoma = document.getElementById("soma");
+
+        // Parte 1: Exibir números pares de 1 até 20 usando 'for'
+        for (let i = 1; i <= 20; i++) {
+            if (i % 2 === 0) {
+                divPares.innerHTML += i + " ";
+                console.log("Par: " + i);
+            }
+        }
+
+        // Parte 2 e 3: Calcular e exibir a soma de 1 até 10 usando 'while' (combinando laços)
+        let somaTotal = 0;
+        let j = 1;
+        while (j <= 10) {
+            somaTotal += j;
+            j++;
+        }
+
+        divSoma.innerHTML = "O resultado final é: " + somaTotal;
+        console.log("Soma total: " + somaTotal);
+    </script>
+
+</body>
+</html>
