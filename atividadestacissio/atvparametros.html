@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 2 - Saudar</title>
+    <style>body { font-family: Arial; margin: 40px; } input, button { margin: 5px; }</style>
+</head>
+<body>
+    <h2>Função com Parâmetro</h2>
+    <label>Digite seu nome:</label>
+    <input type="text" id="campoNome" placeholder="Ex: Maria">
+    <button onclick="executarSaudar()">Saudar</button>
+    <p id="resultado2" style="font-weight: bold; color: green;"></p>
+
+    <script>
+        function saudar(nome) {
+            document.getElementById("resultado2").innerText = `Olá, ${nome}!`;
+        }
+
+        function ejecutarSaudar() {
+            let nomeDigitado = document.getElementById("campoNome").value;
+            saudar(nomeDigitado);
+        }
+    </script>
+</body>
+</html>

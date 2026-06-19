@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 4 - Arrow Function</title>
+    <style>body { font-family: Arial; margin: 40px; } input, button { margin: 5px; }</style>
+</head>
+<body>
+    <h2>Desafio Arrow Function (Dobro do Número)</h2>
+    <label>Digite um número:</label>
+    <input type="number" id="num" placeholder="Ex: 7">
+    <button onclick="mostrarDobro()">Calcular Dobro</button>
+    <p id="resultado4"></p>
+
+    <script>
+        const dobro = (numero) => numero * 2;
+
+        function mostrarDobro() {
+            let n = Number(document.getElementById("num").value);
+            document.getElementById("resultado4").innerText = `O dobro de ${n} é: ${dobro(n)}`;
+        }
+    </script>
+</body>
+</html>
