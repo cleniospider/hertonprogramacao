@@ -1,0 +1,26 @@
+<!-- Crie um programa que exiba os números de 1 até 5 utilizando a estrutura do...while -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício 3 - Do While</title>
+</head>
+<body>
+
+    <h1>Exercício 3: Números de 1 até 5</h1>
+    <div id="resultado"></div>
+
+    <script>
+        let elemento = document.getElementById("resultado");
+        let contador = 1;
+
+        do {
+            elemento.innerHTML += contador + "<br>";
+            console.log(contador);
+            contador++;
+        } while (contador <= 5);
+    </script>
+
+</body>
+</html>
