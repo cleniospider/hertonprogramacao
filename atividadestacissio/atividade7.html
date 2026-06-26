@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resolução dos Exercícios Práticos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+        .exercicio {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            border: 1px solid #aaa;
+            background-color: #e7e7e7;
+        }
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="exercicio">
+        <h2>Exercício 1: Parte 1 — Alterar Texto</h2>
+        <h1 id="titulo">Minha Página</h1>
+        <button onclick="alterarTexto()">Alterar Texto</button>
+    </div>
+
+    <div class="exercicio">
+        <h2>Exercício 2: Parte 2 — Estilização</h2>
+        <h1 id="titulo2">Minha Página (Estilo)</h1>
+        <button onclick="alterarTextoEEstilo()">Alterar Texto e Estilo</button>
+    </div>
+
+    <div class="exercicio">
+        <h2>Exercício 3: Desafio — Dois Botões</h2>
+        <p id="paragrafoDesafio">Este é o parágrafo do desafio inicial.</p>
+        <button onclick="desafioAlterarTexto()">Botão 1: Altera Texto</button>
+        <button onclick="desafioAlterarEstiloCompleto()">Botão 2: Altera Estilo Completo</button>
+    </div>
+
+    <script>
+        //Exercício 1
+        function alterarTexto() {
+            let elementoTitulo = document.getElementById("titulo");
+            elementoTitulo.textContent = "Bem-vindo ao JavaScript!";
+        }
+
+        //Exercício 2
+        function alterarTextoEEstilo() {
+            let elementoTitulo2 = document.getElementById("titulo2");
+
+            elementoTitulo2.textContent = "Bem-vindo ao JavaScript!";
+
+            elementoTitulo2.style.color = "blue";
+
+            elementoTitulo2.style.fontSize = "30px";
+        }
+
+        function desafioAlterarTexto() {
+            let paragrafo = document.getElementById("paragrafoDesafio");
+            paragrafo.textContent = "O texto do parágrafo foi modificado pelo Botão 1!";
+        }
+
+        function desafioAlterarEstiloCompleto() {
+            let paragrafo = document.getElementById("paragrafoDesafio");
+
+            paragrafo.style.color = "white";
+
+            paragrafo.style.backgroundColor = "purple";
+
+            paragrafo.style.fontSize = "24px";
+
+            paragrafo.style.padding = "10px";
+        }
+    </script>
+
+</body>
+</html>
