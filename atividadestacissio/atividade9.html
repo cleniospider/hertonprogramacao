@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Prático - Formulário de Cadastro</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #0066cc;
+        }
+
+        .error-border {
+            border-color: #ff4d4d !important;
+        }
+
+        .success-border {
+            border-color: #2ecc71 !important;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            color: #2ecc71;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: #0052a3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Formulário de Cadastro</h2>
+    
+    <form id="cadastroForm" novalidate>
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <div class="error-message" id="erroNome">O campo Nome é obrigatório.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email">
+            <div class="error-message" id="erroEmail">O campo E-mail é obrigatório.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha">
+            <div class="error-message" id="erroSenha">A senha deve ter pelo menos 8 caracteres.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" id="confirmarSenha" name="confirmarSenha">
+            <div class="error-message" id="erroConfirmarSenha">As senhas não coincidem.</div>
+        </div>
+
+        <button type="submit">Cadastrar</button>
+        
+        <div class="success-message" id="mensagemSucesso">
+            Cadastro realizado com sucesso!
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome');
+        const email = document.getElementById('email');
+        const senha = document.getElementById('senha');
+        const confirmarSenha = document.getElementById('confirmarSenha');
+
+        const erroNome = document.getElementById('erroNome');
+        const erroEmail = document.getElementById('erroEmail');
+        const erroSenha = document.getElementById('erroSenha');
+        const erroConfirmarSenha = document.getElementById('erroConfirmarSenha');
+        const mensagemSucesso = document.getElementById('mensagemSucesso');
+
+        let formularioValido = true;
+
+        function resetarStatus(input, erroElemento) {
+            input.classList.remove('error-border', 'success-border');
+            erroElemento.style.display = 'none';
+        }
+
+        resetarStatus(nome, erroNome);
+        resetarStatus(email, erroEmail);
+        resetarStatus(senha, erroSenha);
+        resetarStatus(confirmarSenha, erroConfirmarSenha);
+        mensagemSucesso.style.display = 'none';
+
+        // --- VALIDAÇÃO PARTE 1: Campos Obrigatórios ---
+        if (nome.value.trim() === "") {
+            nome.classList.add('error-border');
+            erroNome.style.display = 'block';
+            formularioValido = false;
+        }
+
+        if (email.value.trim() === "") {
+            email.classList.add('error-border');
+            erroEmail.style.display = 'block';
+            formularioValido = false;
+        }
+
+        // --- VALIDAÇÃO PARTE 2: Comprimento da Senha ---
+        if (senha.value.length < 8) {
+            senha.classList.add('error-border');
+            erroSenha.style.display = 'block';
+            formularioValido = false;
+        }
+
+        // --- VALIDAÇÃO DESAFIO EXTRA: Confirmar Senha ---
+        if (senha.value !== confirmarSenha.value || confirmarSenha.value.trim() === "") {
+            confirmarSenha.classList.add('error-border');
+            erroConfirmarSenha.style.display = 'block';
+            formularioValido = false;
+        }
+
+        if (formularioValido) {
+            nome.classList.add('success-border');
+            email.classList.add('success-border');
+            senha.classList.add('success-border');
+            confirmarSenha.classList.add('success-border');
+
+            mensagemSucesso.style.display = 'block';
+        }
+    });
+</script>
+
+</body>
+</html>
