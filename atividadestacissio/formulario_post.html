@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Parte 2 - Método POST</title>
+</head>
+<body>
+    <h2>Formulário de Cadastro (POST)</h2>
+    <form action="processa_post.php" method="POST">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="curso">Curso:</label><br>
+        <input type="text" id="curso" name="curso" required><br><br>
+
+        <label for="idade">Idade:</label><br>
+        <input type="number" id="idade" name="idade" required><br><br>
+
+        <button type="submit">Enviar via POST</button>
+    </form>
+</body>
+</html>
